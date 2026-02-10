@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-02-10T00:00:00Z",
+  "components": [
+    {
+      "id": "hero-standard",
+      "name": "Hero Standard",
+      "type": "section",
+      "tier": "base",
+      "path": "library/sections/base/hero-standard.html",
+      "description": "Sección hero simple y responsiva (base).",
+      "price_estimated": 0,
+      "requires_external_plugin": false,
+      "protected": false,
+      "metadata": {}
+    },
+    {
+      "id": "pricing-table",
+      "name": "Pricing Table",
+      "type": "section",
+      "tier": "premium",
+      "path": "library/sections/premium/pricing-table.html",
+      "description": "Estructura de tabla de precios (premium).",
+      "price_estimated": 49,
+      "requires_external_plugin": false,
+      "protected": true,
+      "protection": {
+        "mode": "auth_token|on_demand_download",
+        "note": "Puede requerir descarga bajo demanda o estar encriptado; el builder debe solicitar auth_token cuando corresponda."
+      },
+      "metadata": {}
+    }
+  ]
+}

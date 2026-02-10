@@ -1,16 +1,16 @@
- # Kum CMS
+ # KUMI CMS
 
 <p align="left">
-  <img src="https://img.shields.io/github/license/sosaheri/kum-cms" alt="License">
-  <img src="https://img.shields.io/github/stars/sosaheri/kum-cms?style=flat&color=yellow" alt="Stars">
-  <img src="https://img.shields.io/github/issues/sosaheri/kum-cms" alt="Issues">
-  <img src="https://img.shields.io/github/last-commit/sosaheri/kum-cms" alt="Last Commit">
+  <img src="https://img.shields.io/github/license/sosaheri/kumi-cms" alt="License">
+  <img src="https://img.shields.io/github/stars/sosaheri/kumi-cms?style=flat&color=yellow" alt="Stars">
+  <img src="https://img.shields.io/github/issues/sosaheri/kumi-cms" alt="Issues">
+  <img src="https://img.shields.io/github/last-commit/sosaheri/kumi-cms" alt="Last Commit">
 </p>
 
 ---
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sosaheri/kum-cms)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsosaheri%2Fkum-cms)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sosaheri/kumi-cms)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsosaheri%2Fkumi-cms)
 
 # mini-CMS (file-based)
 
@@ -128,3 +128,50 @@ Si quieres, empiezo por:
 - avanzar con la Admin UI que edite colecciones en modo dev.
 
 Dime con cuál prefieres que continúe.
+
+
+
+Proyecto KUMI 🐦
+
+Bienvenido a tu nuevo proyecto generado con el KUMI CLI. Este es un sitio web estático de alto rendimiento diseñado para ser ligero, modular y fácil de mantener.
+
+🚀 Inicio Rápido
+
+Para ver tu sitio funcionando inmediatamente:
+
+Instala las herramientas (si no lo has hecho):
+
+npm install
+
+
+Levanta el servidor de desarrollo:
+Puedes usar el comando de Node para servir archivos estáticos:
+
+npx serve .
+
+
+O simplemente usa la extensión Live Server de VS Code sobre el archivo index.html.
+
+📁 Estructura del Proyecto
+
+/data: Aquí residen tus contenidos en formato JSON. Editando estos archivos cambias el contenido del sitio sin tocar el código.
+
+/themes: Contiene el CSS y las plantillas visuales. El tema actual es default.
+
+/lib/framework: El núcleo (core.js) que hace que todo funcione. No se recomienda editarlo a menos que seas experto.
+
+/scripts: Herramientas de utilidad para validar datos o crear nuevos temas.
+
+🛠 Comandos Disponibles
+
+node scripts/validate-data.js: Verifica que tus archivos JSON no tengan errores.
+
+node scripts/assemble-theme.js: Reconstruye el index.html basándose en el manifiesto del tema.
+
+node scripts/build-standalone.js: Genera una versión del sitio en un solo archivo HTML, ideal para compartir rápidamente.
+
+🎨 Personalización
+
+Para cambiar el aspecto del sitio, dirígete a themes/default/theme.css. KUMI utiliza variables CSS en el :root para que puedas cambiar colores y fuentes de forma global y sencilla.
+
+KUMI: Vuela rápido, vuela ligero.
