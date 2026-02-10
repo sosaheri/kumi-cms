@@ -10,7 +10,7 @@ const SITE_CONFIG = {
     collections: [
         {
             containerId: 'projects-container',
-            jsonPath: 'data/proyectos.json', // <-- Archivo externo
+            jsonPath: 'data/proyectos.json', // <-- external file
             template: (item) => `<div class="grid-card-icon"><i class="fa-solid fa-cube"></i></div><h4>${item.clientLogo || item.name}</h4>`,
             modalTemplate: (data) => `
                 <div class="modal-img-side"><img src="${data.image}"></div>
@@ -22,7 +22,7 @@ const SITE_CONFIG = {
         },
         {
             containerId: 'workshops-container',
-            jsonPath: 'data/talleres.json', // <-- Archivo externo
+            jsonPath: 'data/talleres.json', // <-- external file
             template: (item) => `<div class="grid-card-icon"><i class="fa-solid ${item.icon}"></i></div><h4>${item.name}</h4>`,
             modalTemplate: (data) => `
                 <div class="modal-img-side"><img src="${data.image}"></div>
@@ -50,12 +50,12 @@ SITE_CONFIG.collections.forEach(col => {
     if (!col.fallback) {
         if (col.containerId === 'projects-container') {
             col.fallback = [
-                { name: 'Proyecto Demo', clientLogo: 'ACME', desc: 'Proyecto de ejemplo para demo local', image: 'https://via.placeholder.com/800x450', tags: ['API','Seguridad'] }
+                { name: 'Demo Project', clientLogo: 'ACME', desc: 'Sample project for local demo', image: 'https://via.placeholder.com/800x450', tags: ['API','Security'] }
             ];
         }
         if (col.containerId === 'workshops-container') {
             col.fallback = [
-                { name: 'Taller Intro', icon: 'fa-chalkboard-user', date: '2026-03-10', desc: 'Taller práctico introductorio', image: 'https://via.placeholder.com/800x450' }
+                { name: 'Intro Workshop', icon: 'fa-chalkboard-user', date: '2026-03-10', desc: 'Introductory hands-on workshop', image: 'https://via.placeholder.com/800x450' }
             ];
         }
     }

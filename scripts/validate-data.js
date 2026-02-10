@@ -5,7 +5,7 @@ const Ajv = require('ajv');
 
 const ajv = new Ajv({ allErrors: true, strict: false });
 
-// Mapeo de archivos a sus esquemas
+// Mapping of data files to their schemas
 const schemaMap = {
   'proyectos.json': '../schemas/projects.schema.json',
   'talleres.json': '../schemas/workshops.schema.json'
@@ -13,17 +13,17 @@ const schemaMap = {
 
 const dataDir = path.join(__dirname, '..', 'data');
 
-// 1. Verificar/Crear carpeta data
+// Ensure data directory exists
 if (!fs.existsSync(dataDir)) {
-  console.log('--- Creando carpeta data/ para inicializar ---');
+  console.log('--- Creating data/ directory to initialize ---');
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
 const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json'));
 
 if (files.length === 0) {
-  console.warn('⚠️ No se encontraron archivos JSON en la carpeta data/.');
-  console.log('Tip: Crea un archivo proyectos.json en la carpeta data/ para validar.');
+  console.warn('⚠️ No JSON files found in data/.');
+  console.log('Tip: Create a proyectos.json file in data/ to validate.');
   process.exit(0);
 }
 
@@ -38,13 +38,13 @@ for (const file of files) {
     const schemaRelativePath = schemaMap[file];
 
     if (!schemaRelativePath) {
-      console.warn(`  ⚠️ No hay un esquema definido para ${file}, saltando validación.`);
+      console.warn(`  ⚠️ No schema defined for ${file}, skipping validation.`);
       continue;
     }
 
     const schemaPath = path.join(__dirname, schemaRelativePath);
     if (!fs.existsSync(schemaPath)) {
-      console.error(`  ❌ Archivo de esquema no encontrado en: ${schemaPath}`);
+      console.error(`  ❌ Schema file not found at: ${schemaPath}`);
       continue;
     }
 
@@ -54,21 +54,21 @@ for (const file of files) {
 
     if (!valid) {
       hadErrors = true;
-      console.error(`  ❌ Errores en ${file}:`);
+      console.error(`  ❌ Errors in ${file}:`);
       validate.errors.forEach(err => {
         console.error(`     - ${err.instancePath} ${err.message}`);
       });
     } else {
-      console.log(`  ✅ ${file} es válido.`);
+      console.log(`  ✅ ${file} is valid.`);
     }
   } catch (e) {
     hadErrors = true;
-    console.error(`  ❌ Error crítico leyendo ${file}: ${e.message}`);
+    console.error(`  ❌ Critical error reading ${file}: ${e.message}`);
   }
 }
 
 if (hadErrors) {
   process.exit(1);
 } else {
-  console.log('\n🐦 ¡Todos los datos están listos para volar!');
+  console.log('\n🐦 All data files are valid and ready.');
 }

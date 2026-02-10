@@ -253,7 +253,7 @@ section.active-slide { opacity: 1; transform: translateY(0); }
     transform: translateX(-50%) translateY(10px);
 }
 
-/* Tarifas */
+/* Pricing */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -277,7 +277,7 @@ section.active-slide { opacity: 1; transform: translateY(0); }
 .price-card .amount { font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 10px; }
 .price-card .period { font-size: 0.9rem; color: var(--text-dim); }
 
-/* Estilo para items de cuadrícula (Proyectos/Talleres) */
+/* Grid item styles (Projects/Workshops) */
 .grid-layout {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px; margin-top: 50px;
