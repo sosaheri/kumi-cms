@@ -1,10 +1,11 @@
 <!-- Hero Standard - Base component -->
-<section class="hero hero-standard">
+<section class="hero hero-standard" style="background-image: url('{{hero.bg_img}}');">
   <div class="container">
-    <h1 class="hero-title">Título principal</h1>
-    <p class="hero-subtitle">Subtítulo descriptivo para el hero.</p>
+    <p class="hero-subtitle">{{hero.subtitle}}</p>
+    <h1 class="hero-title">{{hero.title}}</h1>
+    <p class="hero-desc">{{hero.desc}}</p>
     <div class="hero-cta">
-      <a href="#" class="btn btn-primary">Acción principal</a>
+      <a href="{{hero.cta_link}}" class="btn btn-primary">{{hero.cta_text}}</a>
     </div>
   </div>
 </section>

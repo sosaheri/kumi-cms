@@ -1,6 +1,40 @@
 {
   "hero-standard": {
     "hero": {
+      "title": "KUMI — Demo Site",
+      "subtitle": "Lanzamiento",
+      "desc": "Motor modular y ligero para sitios estáticos.",
+      "bg_img": "https://placehold.co/1200x600.png",
+      "cta_text": "Comenzar",
+      "cta_link": "#contact"
+    }
+  },
+  "features-grid": {
+    "section_title": "Nuestros Servicios",
+    "features_html": "<div class=\"feature\"><i class=\"icon-star\"></i><h3>Rápido</h3><p>Deploy instantáneo</p></div><div class=\"feature\"><i class=\"icon-check\"></i><h3>Modular</h3><p>Secciones intercambiables</p></div>"
+  },
+  "pricing-base": {
+    "plan_name": "Pro",
+    "price": "49",
+    "currency": "$",
+    "features_html": "<li>Hasta 10 proyectos</li><li>Soporte email</li>",
+    "payment_link": "#"
+  },
+  "testimonials-base": {
+    "testimonials_html": "<article class=\"testimonial\"><blockquote>Excelente servicio</blockquote><p class=\"author\">Ana Pérez — Acme</p></article>"
+  },
+  "faq-base": {
+    "faq_html": "<div class=\"faq-item\"><strong>¿Cómo empezar?</strong><p>Crea una cuenta y sigue el wizard.</p></div>"
+  },
+  "contact-base": {
+    "title": "Hablemos",
+    "email": "hola@example.com",
+    "phone": "+123456789"
+  }
+}
+{
+  "hero-standard": {
+    "hero": {
       "title": "Bienvenido a KUMI - Sección Hero",
       "subtitle": "Construye sitios ensamblando secciones"
     }

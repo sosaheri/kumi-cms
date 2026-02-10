@@ -1,5 +1,10 @@
 {
   "sections": [
-    "hero-standard"
+    "hero-standard",
+    "features-grid",
+    "pricing-base",
+    "testimonials-base",
+    "faq-base",
+    "contact-base"
   ]
 }

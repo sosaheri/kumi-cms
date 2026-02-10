@@ -12,6 +12,17 @@
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sosaheri/kumi-cms)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsosaheri%2Fkumi-cms)
 
+**KUMI Version:** v0.2.0 — use the `kumi` CLI to compose sites.
+
+Quick wizard usage (interactive):
+
+```bash
+# from the project root
+node ../kumi-cli/bin/kumi.js wizard
+# or, if installed globally
+kumi wizard
+```
+
 # mini-CMS (file-based)
 
 Este repositorio contiene una landing desacoplada que actúa como un mini-CMS usando archivos JSON/Markdown como fuente de verdad.
@@ -175,3 +186,53 @@ node scripts/build-standalone.js: Genera una versión del sitio en un solo archi
 Para cambiar el aspecto del sitio, dirígete a themes/default/theme.css. KUMI utiliza variables CSS en el :root para que puedas cambiar colores y fuentes de forma global y sencilla.
 
 KUMI: Vuela rápido, vuela ligero.
+
+---
+
+Más recursos y flujo de trabajo
+------------------------------
+
+- Uso del `standalone`: útil para entregar previews o subir a hosting estático. El standalone es una versión prerenderizada sin JavaScript que debe incluir `theme.css` y la carpeta `assets/` si tu theme la necesita.
+
+- Reiniciar un proyecto: si quieres borrar todos los contenidos generados y volver a empezar, borra `data/*.json` (o restaura desde control de versiones) y limpia `themes/*/index-standalone.html`.
+
+Comandos útiles
+----------------
+
+```bash
+# Ejecutar el Wizard interactivo
+node ../kumi-cli/bin/kumi.js wizard
+
+# Limpiar temas generados (borra index-standalone.html y assets de cada theme)
+node ../kumi-cli/bin/kumi.js clean-themes
+```
+
+Mini tutorial: crear una web con todas las secciones disponibles
+-------------------------------------------------------------
+
+1. Ejecuta el Wizard:
+
+```bash
+node ../kumi-cli/bin/kumi.js wizard
+```
+
+2. Añade las siguientes secciones cuando el Wizard lo pregunte (en este orden de ejemplo):
+- `hero-standard`
+- `features-grid`
+- `pricing-base`
+- `testimonials-base`
+- `faq-base`
+- `contact-base`
+
+3. Para `Features`, `Pricing`, `Testimonials` y `FAQ` el Wizard te pedirá repetidamente elementos ("¿Quieres añadir otra característica? (S/N)"). Añade 2–3 ítems por sección para ver el layout.
+
+4. Al finalizar acepta "construir ahora" para ejecutar el ensamblador. Se generará `themes/default/index-standalone.html`.
+
+5. Abre `themes/default/index-standalone.html` en tu navegador para revisar la página estática.
+
+Consejos de mantenimiento
+------------------------
+- Para actualizar la librería de secciones, añade nuevas plantillas en `library/sections/base/` y registra sus metadatos en `library/catalog.json`.
+- Si usas secciones `premium`, el Wizard mostrará una advertencia; la lógica de validación/descarga está planificada en la Fase 4.
+
+¿Listo para seguir? Revisa el `kumi-cli` para comandos útiles (`wizard`, `clean-themes`, `build`).
